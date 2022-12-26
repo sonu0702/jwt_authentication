@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-
-
-import { Role} from './types';
+import {
+  Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,
+  UpdateDateColumn
+} from 'typeorm';
 
 @Entity('users')
 export class User {
@@ -42,30 +42,17 @@ export class User {
   city?: string;
 
   @Column({
-    default: 'STANDARD' as Role,
-    length: 30,
-  })
-  role: string;
-
-  @Column({
     default: {},
     nullable: false,
     type: 'jsonb',
   })
   additional_data: any;
 
-
-
   @Column({
     default: false,
   })
   isEmailVerified: boolean;
 
-  @Column({
-    default: {},
-    type: 'jsonb',
-  })
-  user_preferences: any;
 
   @Column()
   @CreateDateColumn()

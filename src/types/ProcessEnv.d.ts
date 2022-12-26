@@ -7,7 +7,8 @@ declare namespace NodeJS {
     POSTGRES_USER: string;
     POSTGRES_PASSWORD: string;
     POSTGRES_DB: string;
-    JWT_SECRET: string;
-    JWT_EXPIRATION: string;
+    API_KEY: string;
+    JWT_TOKEN_PRIVATE_KEY: string;
+    JWT_TOKEN_EXPIRED_IN: string;
   }
 }
