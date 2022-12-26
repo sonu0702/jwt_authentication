@@ -3,9 +3,7 @@ import { ConnectionOptions } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 
-export async function fetchConfig() {
-
-
+function fetchConfig() {
   const config: ConnectionOptions = {
     type: 'postgres',
     host: process.env.PG_HOST,
@@ -28,3 +26,5 @@ export async function fetchConfig() {
 
   return config;
 }
+
+export = fetchConfig();
